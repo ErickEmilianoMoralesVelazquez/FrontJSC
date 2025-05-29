@@ -19,6 +19,7 @@ import OrdersGaseraTable from "./components/tables/ordersGaseraTable";
 import QuotesGaseraTable from "./components/tables/quotesGaseraTable";
 
 import MyLogin from "./pages/login";
+import CarouselAdmin from "./components/sections/CarouselAdmin";
 import "./App.css";
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
           {/* Público */}
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<MyLogin />} />
+          <Route path="/carrusel-admin" element={<CarouselAdmin />}></Route>
 
           {/* Privado con layout de dashboard */}
           <Route path="/dashboard/superadmin" element={<DashboardLayout />}>

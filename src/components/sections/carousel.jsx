@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from "react";
 
-const slides = [
+const defaultSlides = [
   {
-    src: "/images/slider-1.png",
+    src: "/images/carrusel/slider-1.png",
     alt: "Slider 1",
   },
   {
-    src: "/images/slider-2.jpg",
+    src: "/images/carrusel/slider-2.jpg",
     alt: "Slider 2",
   },
   {
-    src: "/images/slider-3.jpg",
+    src: "/images/carrusel/slider-3.jpg",
     alt: "Slider 3",
   },
   {
-    src: "/images/slider-4.jpg",
+    src: "/images/carrusel/slider-4.jpg",
     alt: "Slider 4",
   },
 ];
 
-export default function Carousel() {
+export default function Carousel({ slides = defaultSlides }) {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function Carousel() {
     }, 5000); // cambia cada 5 segundos
 
     return () => clearInterval(interval); // limpia en desmontaje
-  }, []);
+  }, [slides.length]);
 
   const goToNext = () => {
     setCurrent((prev) => (prev + 1) % slides.length);
