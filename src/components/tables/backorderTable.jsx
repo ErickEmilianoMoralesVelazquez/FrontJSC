@@ -448,7 +448,6 @@ export default function BackordersTable() {
                       />
                     </button>
                   </div>
-
                   <form onSubmit={handleCreateShipment} className="space-y-4">
                     <motion.div
                       initial={{ opacity: 0, x: -10 }}
