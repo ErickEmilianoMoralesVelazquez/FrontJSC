@@ -70,7 +70,7 @@ button:focus-visible {
 @import "tailwindcss";
 .bg-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("/public/images/slider-3.jpg");
+    url("/public/images/carrusel/slider-3.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

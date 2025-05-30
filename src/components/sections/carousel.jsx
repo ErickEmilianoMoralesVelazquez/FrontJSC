@@ -1,33 +1,33 @@
 import React, { useEffect, useState } from "react";
 
-const defaultSlides = [
-  {
-    src: "/images/carrusel/slider-1.png",
-    alt: "Slider 1",
-  },
-  {
-    src: "/images/carrusel/slider-2.jpg",
-    alt: "Slider 2",
-  },
-  {
-    src: "/images/carrusel/slider-3.jpg",
-    alt: "Slider 3",
-  },
-  {
-    src: "/images/carrusel/slider-4.jpg",
-    alt: "Slider 4",
-  },
-];
-
-export default function Carousel({ slides = defaultSlides }) {
+export default function Carousel() {
+  const [slides, setSlides] = useState([]);
   const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const fetchSlides = async () => {
+      try {
+        const res = await fetch(`${import.meta.env.VITE_URL_BACKEND}carousel/list`);
+        const data = await res.json();
+        const formatted = data.map(item => ({
+          src: item.image_url,
+          alt: item.caption
+        }));
+        setSlides(formatted);
+      } catch (error) {
+        console.error('Error al obtener imágenes del carrusel:', error);
+      }
+    };
+
+    fetchSlides();
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000); // cambia cada 5 segundos
+    }, 5000);
 
-    return () => clearInterval(interval); // limpia en desmontaje
+    return () => clearInterval(interval);
   }, [slides.length]);
 
   const goToNext = () => {
@@ -37,6 +37,8 @@ export default function Carousel({ slides = defaultSlides }) {
   const goToPrev = () => {
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
   };
+
+  if (slides.length === 0) return null; // No mostrar nada si aún no hay imágenes
 
   return (
     <div className="relative w-full h-[300px] sm:h-[400px] md:h-[600px] overflow-hidden">

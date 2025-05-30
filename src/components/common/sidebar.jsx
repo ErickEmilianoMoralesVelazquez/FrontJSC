@@ -6,6 +6,7 @@ import {
   LogOut,
   Menu,
   User,
+  Image
 } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -39,6 +40,11 @@ const menuItems = [
     label: "Usuarios",
     icon: <User size={18} />,
     path: "/dashboard/superadmin/users",
+  },
+  {
+    label: 'Carrusel',
+    icon: <Image size={18} />,
+    path: '/dashboard/superadmin/carousel',
   },
 ];
 

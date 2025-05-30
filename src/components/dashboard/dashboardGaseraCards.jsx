@@ -10,7 +10,7 @@ export default function DashboardGaseraCards() {
 
     const fetchOrders = async () => {
       try {
-        const res = await fetch('http://localhost:3001/orders', {
+        const res = await fetch(`${import.meta.env.VITE_URL_BACKEND}orders`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -24,7 +24,7 @@ export default function DashboardGaseraCards() {
 
     const fetchQuotations = async () => {
       try {
-        const res = await fetch('http://localhost:3001/quotations', {
+        const res = await fetch(`${import.meta.env.VITE_URL_BACKEND}quotations`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
