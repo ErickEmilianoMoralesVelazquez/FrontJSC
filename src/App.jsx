@@ -30,7 +30,7 @@ export default function App() {
           {/* Público */}
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<MyLogin />} />
-          <Route path="/carrusel-admin" element={<CarouselAdmin />}></Route>
+          {/* <Route path="/carrusel-admin" element={<CarouselAdmin />}></Route> */}
 
           {/* Privado con layout de dashboard */}
           <Route path="/dashboard/superadmin" element={<DashboardLayout />}>
@@ -40,6 +40,7 @@ export default function App() {
             <Route path="payments" element={<PaymentsTable />} />
             <Route path="backorders" element={<BackorderTable />} />
             <Route path="users" element={<UsersTable />} />
+            <Route path="carousel" element={<CarouselAdmin />}></Route>
           </Route>
 
           {/* Privado con layout de dashboard gasera */}

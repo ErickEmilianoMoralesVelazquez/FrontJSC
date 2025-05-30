@@ -17,7 +17,7 @@ const MyLogin = () => {
     setErrorMsg("");
 
     try {
-      const res = await axios.post("http://localhost:3001/auth/login", {
+      const res = await axios.post(`${import.meta.env.VITE_URL_BACKEND}auth/login`, {
         correo: email,
         contraseña: password,
       });
