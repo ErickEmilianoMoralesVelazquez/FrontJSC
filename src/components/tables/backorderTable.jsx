@@ -133,6 +133,7 @@ export default function BackordersTable() {
       // Aquí podrías actualizar la lista de envíos
       fetchShipments();
     } catch (error) {
+      console.log(newShipment)
       console.error("Error creating shipment:", error);
       toast.error("Error al crear el envío");
     }

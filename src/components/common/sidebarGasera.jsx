@@ -44,7 +44,7 @@ export default function SidebarGasera() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://localhost:3001/users/me", {
+      fetch(`${import.meta.env.VITE_URL_BACKEND}users/me`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -94,7 +94,7 @@ export default function SidebarGasera() {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`http://localhost:3001/users/${userId}/upload-profile-photo`, {
+      const response = await fetch(`${import.meta.env.VITE_URL_BACKEND}users/${userId}/upload-profile-photo`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

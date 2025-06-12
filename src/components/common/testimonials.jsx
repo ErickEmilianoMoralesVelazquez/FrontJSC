@@ -3,22 +3,22 @@ import React from "react";
 const testimonials = [
   {
     quote:
-      "Hemos reducido los tiempos de procesamiento de pedidos en un 70% y mejorado la satisfacción de nuestros clientes.",
-    name: "Erick Morales",
-    role: "Director de Operaciones"
+      "La implementación del sistema ha mejorado drásticamente nuestra eficiencia interna y reducido errores en un 50%.",
+    name: "Laura Méndez",
+    role: "Gerente de Logística"
   },
   {
     quote:
-      "Hemos reducido los tiempos de procesamiento de pedidos en un 70% y mejorado la satisfacción de nuestros clientes.",
-    name: "Erick Morales",
-    role: "Director de Operaciones"
+      "Gracias a la nueva plataforma, el equipo comercial ahora puede atender a los clientes en menos de la mitad del tiempo.",
+    name: "Carlos Ruiz",
+    role: "Jefe de Ventas"
   },
   {
     quote:
-      "Hemos reducido los tiempos de procesamiento de pedidos en un 70% y mejorado la satisfacción de nuestros clientes.",
-    name: "Erick Morales",
-    role: "Director de Operaciones"
-  }
+      "Nuestra toma de decisiones ahora se basa en datos en tiempo real. Es un cambio radical en nuestra operación.",
+    name: "Elena Torres",
+    role: "Analista de Negocios"
+  }  
 ];
 
 export default function Testimonials() {
