@@ -116,9 +116,9 @@ const MyLogin = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-black text-white font-medium py-3 rounded-lg hover:bg-gray-800 transition-colors"
+                  className="w-full bg-red-700 text-white font-medium py-3 rounded-lg hover:bg-gray-800 transition-colors"
                 >
-                  CONTINUAR
+                  Inicar Sesión
                 </button>
               </form>
             </div>
