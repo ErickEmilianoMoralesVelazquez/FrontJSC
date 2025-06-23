@@ -20,7 +20,7 @@ export default function Navbar() {
         {/* Logo + Título */}
         <div className="flex items-center gap-x-4 lg:justify-start justify-center w-full lg:w-auto">
           <img
-            src="/public/Logo.svg"
+            src="/Logo.svg"
             alt="Jorges Lubricantes"
             className="h-12 object-contain flex-shrink-0"
           />
