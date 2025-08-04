@@ -6,17 +6,17 @@ import Testimonials from "../components//common/testimonials";
 import Navbar from "../components/common/navbar";
 import Footer from "../components/common/footer";
 
-import landingBg from "../assets/images/Landing.png";
+import landingBg from "../assets/images/Landing-full.png";
 import landingImage from "../assets/images/landingImage.png";
 import landingImage2 from "../assets/images/landingImage2.png";
 
 // Imágenes individuales del proceso
-import Step1 from "/images/1.png";
-import Step2 from "/images/2.png";
-import Step3 from "/images/3.png";
-import Step4 from "/images/4.png";
-import Step5 from "/images/5.png";
-import Step6 from "/images/6.png";
+import Step1 from "../assets/images/step1.png";
+import Step2 from "../assets/images/step2.png";
+import Step3 from "../assets/images/step3.png";
+import Step4 from "../assets/images/step4.png";
+import Step5 from "../assets/images/step5.png";
+import Step6 from "../assets/images/step6.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },

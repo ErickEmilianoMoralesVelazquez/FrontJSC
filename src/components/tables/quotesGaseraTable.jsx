@@ -247,7 +247,7 @@ export default function QuotesGaseraTable() {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-md w-full max-w-screen-xl mx-auto px-4 py-6">
+    <div className="bg-white rounded-xl shadow-md w-full  mx-auto px-4 py-6">
       <h2 className="text-xl font-bold mb-4">Gestión de Cotizaciones</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
