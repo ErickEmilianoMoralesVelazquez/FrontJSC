@@ -20,7 +20,7 @@ export default function DashboardLayout() {
         <main
           className="flex-1 bg-cover bg-no-repeat bg-center px-4 py-6"
           style={{
-            backgroundImage: "url('/src/assets/images/bg-pedidos.png')",
+            backgroundImage: "url('/public/background-jsc-2c.webp')",
           }}
         >
           <Outlet />

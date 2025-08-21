@@ -4,7 +4,7 @@ import React from "react";
 
 export default function DashboardLayout() {
   return (
-    <div className="flex w-full min-h-screen overflow-x-hidden">
+    <div className="flex w-full overflow-x-hidden">
       <Sidebar />
       <div className="flex-1 flex flex-col min-h-screen overflow-x-hidden">
         {/* Navbar con fondo de imagen */}
@@ -18,9 +18,9 @@ export default function DashboardLayout() {
 
         {/* Contenido principal con fondo de imagen */}
         <main
-          className="flex-1 min-h-full bg-cover bg-no-repeat bg-center px-4 py-6"
+          className="flex-1 bg-cover bg-no-repeat bg-center px-4 py-6"
           style={{
-            backgroundImage: "url('/src/assets/images/bg-pedidos.png')",
+            backgroundImage: "url('/public/background-jsc-2c.webp')",
           }}
         >
           <Outlet />

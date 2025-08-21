@@ -24,6 +24,7 @@
     "react-datepicker": "^8.3.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.5.0",
+    "react-signature-canvas": "^1.0.7",
     "react-toastify": "^11.0.5",
     "tailwindcss": "^4.1.4",
     "xlsx": "^0.18.5"

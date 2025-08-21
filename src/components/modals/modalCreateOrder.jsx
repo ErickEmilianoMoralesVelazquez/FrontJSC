@@ -1,10 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Upload, FileText, Trash2, Check } from "lucide-react";
+import { X, Upload, FileText, Trash2, Check, Image, MessageCircle, Clock } from "lucide-react";
 
 export default function ModalCreateOrder({ isOpen, onClose, onCreate }) {
   const [uploadedPdf, setUploadedPdf] = useState(null);
+  const [uploadedImage, setUploadedImage] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
+  const [contactMethod, setContactMethod] = useState('whatsapp');
+  const [currentTime, setCurrentTime] = useState('');
+  const [currentDate, setCurrentDate] = useState('');
+
+  useEffect(() => {
+    if (isOpen) {
+      const now = new Date();
+      setCurrentTime(now.toLocaleTimeString());
+      setCurrentDate(now.toLocaleDateString());
+    }
+  }, [isOpen]);
 
   const handleClose = () => {
     setUploadedPdf(null);
@@ -47,7 +59,18 @@ export default function ModalCreateOrder({ isOpen, onClose, onCreate }) {
       alert("Por favor selecciona un archivo PDF.");
       return;
     }
-    onCreate(uploadedPdf);
+    
+    const orderData = {
+      pdf: uploadedPdf,
+      image: uploadedImage,
+      contactMethod,
+      timestamp: {
+        time: currentTime,
+        date: currentDate
+      }
+    };
+    
+    onCreate(orderData);
     handleClose();
   };
 
@@ -88,6 +111,67 @@ export default function ModalCreateOrder({ isOpen, onClose, onCreate }) {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Campos automáticos de fecha y hora */}
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                  <Clock size={16} className="text-red-600" />
+                  Hora
+                </label>
+                <input
+                  type="text"
+                  value={currentTime}
+                  readOnly
+                  className="mt-1 block w-full rounded-md border-gray-300 bg-gray-50"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                  <Clock size={16} className="text-red-600" />
+                  Fecha
+                </label>
+                <input
+                  type="text"
+                  value={currentDate}
+                  readOnly
+                  className="mt-1 block w-full rounded-md border-gray-300 bg-gray-50"
+                />
+              </div>
+            </div>
+
+            {/* Selector de método de contacto */}
+            <div>
+              <label className="text-sm font-medium text-gray-700 flex items-center gap-2 mb-2">
+                <MessageCircle size={16} className="text-red-600" />
+                Método de contacto
+              </label>
+              <div className="flex gap-4 p-2 bg-gray-50 rounded-lg">
+                <button
+                  type="button"
+                  onClick={() => setContactMethod('whatsapp')}
+                  className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
+                    contactMethod === 'whatsapp'
+                      ? 'bg-white shadow text-red-600'
+                      : 'text-gray-600 hover:bg-white/50'
+                  }`}
+                >
+                  WhatsApp
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setContactMethod('email')}
+                  className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
+                    contactMethod === 'email'
+                      ? 'bg-white shadow text-red-600'
+                      : 'text-gray-600 hover:bg-white/50'
+                  }`}
+                >
+                  Email
+                </button>
+              </div>
+            </div>
+
+            {/* Campo de PDF */}
             <div>
               <label className="text-sm font-medium text-gray-700 flex items-center gap-2 mb-2">
                 <Upload size={16} className="text-red-600" />
