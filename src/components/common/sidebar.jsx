@@ -81,7 +81,7 @@ export default function Sidebar() {
         <div className="flex flex-col justify-start h-full flex-1">
           <div className="flex justify-center w-full">
             <img
-              src="/src/assets/images/LOGO.png"
+              src="/LOGO.png"
               alt="Logo"
               className="w-30 mb-8"
             />

@@ -4,7 +4,7 @@ import { X, Upload, FileText, Trash2, Check, Image, MessageCircle, Clock } from 
 
 export default function ModalCreateOrder({ isOpen, onClose, onCreate }) {
   const [uploadedPdf, setUploadedPdf] = useState(null);
-  const [uploadedImage, setUploadedImage] = useState(null);
+  // const [uploadedImage, setUploadedImage] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
   const [contactMethod, setContactMethod] = useState('whatsapp');
   const [currentTime, setCurrentTime] = useState('');
@@ -62,7 +62,6 @@ export default function ModalCreateOrder({ isOpen, onClose, onCreate }) {
     
     const orderData = {
       pdf: uploadedPdf,
-      image: uploadedImage,
       contactMethod,
       timestamp: {
         time: currentTime,
@@ -151,7 +150,7 @@ export default function ModalCreateOrder({ isOpen, onClose, onCreate }) {
                   onClick={() => setContactMethod('whatsapp')}
                   className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
                     contactMethod === 'whatsapp'
-                      ? 'bg-white shadow text-red-600'
+                      ? 'bg-red-600 shadow text-white'
                       : 'text-gray-600 hover:bg-white/50'
                   }`}
                 >
@@ -162,7 +161,7 @@ export default function ModalCreateOrder({ isOpen, onClose, onCreate }) {
                   onClick={() => setContactMethod('email')}
                   className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
                     contactMethod === 'email'
-                      ? 'bg-white shadow text-red-600'
+                      ? 'bg-red-600 shadow text-white'
                       : 'text-gray-600 hover:bg-white/50'
                   }`}
                 >

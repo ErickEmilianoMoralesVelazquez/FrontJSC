@@ -174,19 +174,11 @@ export default function OrdersGaseraTable() {
       cell: (row) => (
         <div className="flex items-center justify-start h-full gap-3">
           <Eye
-            className="w-4 h-4 text-blue-500 cursor-pointer hover:scale-110 transition"
+            className="w-4 h-4 text-red-600 cursor-pointer hover:scale-110 transition"
             title="Ver PDF"
             onClick={() => window.open(row.archivo_url, "_blank")}
           />
 
-          <Pencil
-            className="w-4 h-4 text-yellow-500 cursor-pointer hover:scale-110 transition"
-            title="Editar pedido"
-            onClick={() => {
-              setSelectedOrder(row);
-              setIsEditOpen(true);
-            }}
-          />
           <Trash2
             className="w-4 h-4 text-red-500 cursor-pointer hover:scale-110 transition"
             title="Eliminar pedido"

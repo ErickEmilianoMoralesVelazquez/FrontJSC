@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import DataTable from "react-data-table-component";
 import ModalSaveQuote from "../modals/modalSaveQuote";
-import { FilePlus, Eye } from "lucide-react";
+import { FilePlus, Eye, FileCheck } from "lucide-react";
 import { toast } from "react-toastify";
 
 const badgeColors = {
@@ -38,10 +38,27 @@ export default function QuotesTable() {
       name: "Acciones",
       cell: (row) => (
         <div className="flex items-center gap-2">
-          <Eye
-            className="w-4 h-4 text-blue-500 cursor-pointer hover:scale-110 transition"
+          <button
+            className="px-2 py-1 text-xs font-medium text-white bg-red-600 rounded hover:bg-red-700 transition-colors"
             onClick={() => window.open(row.archivo_url, "_blank")}
-          />
+          >
+            Ver cotización
+          </button>
+          {row.pdf_aceptacion_url ? (
+            <button
+              className="px-2 py-1 text-xs font-medium text-white bg-green-500 rounded hover:bg-green-600 transition-colors"
+              onClick={() => window.open(row.pdf_aceptacion_url, "_blank")}
+            >
+              Ver aceptación
+            </button>
+          ) : (
+            <button
+              className="px-2 py-1 text-xs font-medium text-gray-500 bg-gray-100 rounded cursor-not-allowed"
+              disabled
+            >
+              Sin aceptación
+            </button>
+          )}
         </div>
       ),
     },
@@ -69,6 +86,7 @@ export default function QuotesTable() {
         pedidoId: quote.pedido_id,
         estado: quote.estado,
         archivo_url: quote.archivo_url || "",
+        pdf_aceptacion_url: quote.pdf_aceptacion_url || null,
         fecha: new Date(quote.fecha_creacion).toLocaleDateString("es-MX"),
       }));
 

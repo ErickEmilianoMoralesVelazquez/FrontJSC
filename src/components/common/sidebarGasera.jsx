@@ -37,7 +37,7 @@ export default function SidebarGasera() {
   const [uploadedImage, setUploadedImage] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
   const [profileImage, setProfileImage] = useState(() =>
-    localStorage.getItem("profileImage") || "/src/assets/images/image.png"
+    localStorage.getItem("profileImage") || "/usuario.png"
   );
   const [userId, setUserId] = useState(null);
 

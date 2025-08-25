@@ -11,7 +11,7 @@ export default function DashboardLayout() {
         <div
           className="w-full h-26 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/src/assets/images/logos-nav.png')",
+            backgroundImage: "url('/logos-nav.png')",
             backgroundColor: "#3c3d3f",
           }}
         />
@@ -20,7 +20,7 @@ export default function DashboardLayout() {
         <main
           className="flex-1 bg-cover bg-no-repeat bg-center px-4 py-6"
           style={{
-            backgroundImage: "url('/public/background-jsc-2c.webp')",
+            backgroundImage: "url('/background-jsc-2c.webp')",
           }}
         >
           <Outlet />
